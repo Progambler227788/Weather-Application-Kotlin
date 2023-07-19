@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:id = "@+id/upperLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="6sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+        <EditText
+            android:id="@+id/enterCity"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="55sp"
+            android:layout_margin="8sp"
+            android:padding="10dp"
+            android:drawablePadding="8sp"
+            android:hint="City Name"
+            android:drawableStart="@drawable/searching"
+            android:textSize="18sp"
+            android:background="@drawable/rounding_textbox"
+            android:imeOptions="actionSearch"
+            android:textColor="@color/black"
+            android:drawableTint="@color/black"
+
+            >
+
+        </EditText>
+        <!-- android:imeOptions -> Input Method Editor on Keyboard of Mobile-->
+        <ImageView
+            android:id="@+id/current_location"
+            android:layout_width="match_parent"
+            android:layout_weight="5"
+            android:layout_height="50sp"
+            android:background="@drawable/rounding_textbox"
+            android:contentDescription="Search City"
+            android:src="@drawable/location"
+            android:layout_marginEnd="10dp"
+            android:clickable="true"
+            android:focusable="true">
+
+
+        </ImageView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id = "@+id/innerLinearLayout"
+        android:gravity="center"
+        android:layout_margin="10sp"
+        app:layout_constraintTop_toBottomOf="@id/upperLinearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/currentTemperature"
+            android:textSize="60sp"
+            android:layout_marginStart="30sp"
+            android:text="24°"
+            android:fontFamily="sans-serif-black"
+            >
+
+        </TextView>
+        <!-- android:imeOptions -> Input Method Editor on Keyboard of Mobile-->
+        <ImageView
+            android:id="@+id/currentWeatherPic"
+            android:layout_width="wrap_content"
+            android:layout_height="100sp"
+            android:layout_marginStart="30sp"
+            android:contentDescription="Search City"
+            android:src="@drawable/ic_clear_day"
+            android:background="?selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true">
+
+
+        </ImageView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/innerLinearLayout"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/date_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:textSize="16sp"
+        >
+
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/min_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Min Temp"
+            android:layout_marginEnd="25dp"
+            >
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/max_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Max Temp"
+            android:layout_marginStart="25dp"
+           >
+
+        </TextView>
+
+
+    </LinearLayout>
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
