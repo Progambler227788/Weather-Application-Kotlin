@@ -29,6 +29,7 @@
             android:textSize="18sp"
             android:background="@drawable/rounding_textbox"
             android:imeOptions="actionSearch"
+            android:inputType="text"
             android:textColor="@color/black"
             android:drawableTint="@color/black"
 
@@ -88,55 +89,81 @@
 
         </ImageView>
     </LinearLayout>
+
     <LinearLayout
+        android:id="@+id/linearLayoutOfTextViews"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/innerLinearLayout"
-        android:orientation="vertical">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/innerLinearLayout">
 
-    <TextView
-        android:id="@+id/date_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Time"
-        android:layout_gravity="center"
-        android:layout_margin="5dp"
-        android:textSize="16sp"
-        >
+        <TextView
+            android:id="@+id/date_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:text="Time"
+            android:textSize="16sp">
 
-    </TextView>
+        </TextView>
 
-    <LinearLayout
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/min_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                android:text="Min Temp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/max_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:text="Max Temp">
+
+            </TextView>
+
+
+        </LinearLayout>
+    </LinearLayout>
+    <!-- activity_main.xml -->
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="5dp">
+        android:layout_height="0sp"
+        android:layout_marginStart="8sp"
+        android:layout_marginEnd="8sp"
+        android:layout_marginBottom="8sp"
+        app:cardCornerRadius="8sp"
+        app:cardElevation="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutOfTextViews">
 
-        <TextView
-            android:id="@+id/min_temp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Min Temp"
-            android:layout_marginEnd="25dp"
-            >
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="10sp"
+            android:layout_marginBottom="10sp"
 
-        </TextView>
+            tools:listitem="@layout/rv_recyclerview">
 
-        <TextView
-            android:id="@+id/max_temp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Max Temp"
-            android:layout_marginStart="25dp"
-           >
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.cardview.widget.CardView>
 
-        </TextView>
-
-
-    </LinearLayout>
-    </LinearLayout>
 
 
 
