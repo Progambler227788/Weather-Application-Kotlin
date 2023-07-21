@@ -1,5 +1,6 @@
 package com.example.weatherapplication.adapter
 
+
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,12 @@ import com.example.weatherapplication.models.Specs
 class AdapterWeather(private var data : ArrayList<Specs>,private var context : Context) : RecyclerView.Adapter<AdapterWeather.MyViewHolder> () {
     inner class MyViewHolder(var binding : RvRecyclerviewBinding) : ViewHolder(binding.root)
 
+//    @SuppressLint("NotifyDataSetChanged")
+//    fun updateItemBackgroundColor(color: Drawable) {
+//        itemBackgroundColor = color
+//        //notifyDataSetChanged()
+//    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val binding = RvRecyclerviewBinding.inflate(LayoutInflater.from(context),parent,false)
         return  MyViewHolder(binding)
@@ -22,7 +29,10 @@ class AdapterWeather(private var data : ArrayList<Specs>,private var context : C
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-      animateEntrance(holder.itemView,position)
+
+       animateEntrance(holder.itemView,position)
+       holder.binding.itemView.setBackgroundResource(data[position].back)
+
       holder.binding.apply {
           val currentPos = data[position]
           specImage.setImageResource(currentPos.imageResId)
@@ -30,7 +40,7 @@ class AdapterWeather(private var data : ArrayList<Specs>,private var context : C
           specDescription.text = currentPos.desc
       }
     }
-    fun animateEntrance(view: View, position: Int) {
+    private fun animateEntrance(view: View, position: Int) {
         // Set the initial state of the view (completely transparent)
         view.alpha = 0f
 
