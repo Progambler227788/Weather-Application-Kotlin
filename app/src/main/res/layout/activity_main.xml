@@ -10,6 +10,7 @@
         android:id = "@+id/upperLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight = "1"
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_margin="6sp"
@@ -17,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         >
-        <EditText
+        <AutoCompleteTextView
             android:id="@+id/enterCity"
             android:layout_width="match_parent"
             android:layout_weight="1"
@@ -36,7 +37,7 @@
 
             >
 
-        </EditText>
+        </AutoCompleteTextView>
         <!-- android:imeOptions -> Input Method Editor on Keyboard of Mobile-->
         <ImageView
             android:id="@+id/current_location"
@@ -57,6 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_weight = "1"
         android:id = "@+id/innerLinearLayout"
         android:gravity="center"
         android:layout_margin="10sp"
@@ -96,9 +98,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_weight = "1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/innerLinearLayout">
+        <TextView
+            android:id="@+id/descript"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:text="Weather Type"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black"
+            android:textSize="18sp">
+
+        </TextView>
 
         <TextView
             android:id="@+id/date_time"
@@ -139,32 +154,22 @@
         </LinearLayout>
     </LinearLayout>
     <!-- activity_main.xml -->
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="0sp"
-        android:layout_marginStart="8sp"
-        android:layout_marginEnd="8sp"
-        android:layout_marginBottom="8sp"
-        app:cardCornerRadius="8sp"
-        android:id = "@+id/cardViewLayout"
-        app:cardElevation="3sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutOfTextViews">
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="10sp"
-            android:layout_marginEnd="10sp"
-            android:layout_marginBottom="10sp"
+            android:layout_height="0sp"
+            android:layout_margin="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutOfTextViews"
 
             tools:listitem="@layout/rv_recyclerview">
 
         </androidx.recyclerview.widget.RecyclerView>
-    </androidx.cardview.widget.CardView>
+
 
 
 
